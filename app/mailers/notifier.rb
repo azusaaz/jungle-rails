@@ -1,6 +1,5 @@
 class Notifier < ApplicationMailer
-  default from: 'no-reply@example.com',
-          return_path: 'system@example.com'
+
  
   def thanks(user, order)
     @user = user
