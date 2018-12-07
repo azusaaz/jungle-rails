@@ -6,12 +6,19 @@ class OrdersController < ApplicationController
    
   end
 
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
   def create
     charge = perform_stripe_charge
     order  = create_order(charge)
 
     if order.valid?
       empty_cart!
+
+      Notifier.thanks(@current_user, order).deliver_now                
+
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
@@ -32,7 +39,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: "#{current_user.first_name}'s Jungle Order",
       currency:    'cad'
     )
   end

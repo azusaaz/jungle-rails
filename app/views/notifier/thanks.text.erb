@@ -1,0 +1,20 @@
+
+Hello <%= @user.first_name %> <%= @user.last_name %> !
+
+Your Order Details
+===============================================
+Order #<%= @order.id %>
+
+<% @order.line_items.each do |item| %>
+  Product: <%= item.product.name %>
+  Description: <%=  item.product.description %>
+  Price: <%= item.product.price %>
+  Quantity: <%= item.quantity.to_i %>
+<% end %>
+
+TOTAL: <%= @order.total_cents / 100.0 %>
+
+===============================================
+   Thanks for your order. Have a great day!
+
+              --- Jungle ---
