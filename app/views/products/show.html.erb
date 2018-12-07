@@ -26,6 +26,18 @@
       </div>
     </div>
 
+    <div class="panel panel-default products">
+
+    <table class="table table-bordered">
+      <tbody>
+      <%  @reviews.each do |review|  %>
+        <%= render review %>
+        <% end %>
+      </tbody>
+    </table> 
+
+  </div>
+
   </article>
 
 </section>
