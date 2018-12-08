@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   before_filter :authorize
   
   def create
+    
     Review.create(create_params)
 
     redirect_to(:back)
