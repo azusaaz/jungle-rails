@@ -27,10 +27,23 @@
     </div>
 
     <div class="panel panel-default products">
+      <table class="table table-bordered">
+      <tr><td>
+        <%= form_for [@product, @review] do |f| %>
+          Rating: <%= select("review","rating",[1, 2, 3, 4, 5], {:include_blank => false}) %> 
+          Description: <%= f.text_area :description %>
+          <%= f.submit %>
+        <% end %>
+        </td></tr>
+      </table>
+    </div>
 
+    <div class="panel panel-default products">
+    
     <table class="table table-bordered">
+
       <tbody>
-      <%  @reviews.each do |review|  %>
+      <%  @product.reviews.each do |review|  %>
         <%= render review %>
         <% end %>
       </tbody>
