@@ -3,5 +3,11 @@
     <h5>rating: <%= review.rating%>  @<%= review.updated_at %></h5>
     <h5><%= review.user.first_name %> <%= review.user.last_name %>  </h5>
     <h5><%= review.description %></h5>
+    
+    <a>
+    <% if current_user.id == review.user.id %>
+    <%= link_to fa_icon('trash'), product_review_path(@product, review), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+    
   </td>
-</tr>
+</tr> 

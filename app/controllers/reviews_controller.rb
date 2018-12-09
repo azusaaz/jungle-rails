@@ -5,10 +5,17 @@ class ReviewsController < ApplicationController
   def create
     
     Review.create(create_params)
-
     redirect_to(:back)
 
-  end  
+  end 
+
+
+  def destroy
+    @review = Review.find params[:id]
+    @review.destroy
+    redirect_to(:back)
+  end
+
 
   private
   def create_params

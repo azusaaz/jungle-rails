@@ -5,7 +5,8 @@ class Product < ActiveRecord::Base
 
   belongs_to :category
   has_many :reviews
-  accepts_nested_attributes_for :reviews
+  accepts_nested_attributes_for :reviews,
+  allow_destroy: true
 
   validates :name, presence: true
   validates :price, presence: true
