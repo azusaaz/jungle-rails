@@ -1,0 +1,30 @@
+             login GET    /login(.:format)                            sessions#new
+                   POST   /login(.:format)                            sessions#create
+            logout GET    /logout(.:format)                           sessions#destroy
+            signup GET    /signup(.:format)                           users#new
+
+             users POST   /users(.:format)                            users#create
+
+
+              root GET    /                                           search#index
+              
+   chatroom_messages POST   /chatrooms/:chatroom_id/messages(.:format)     messages#create
+    chatroom_message DELETE /chatrooms/:chatroom_id/messages/:id(.:format) messages#destroy
+          chatrooms GET    /chatrooms(.:format)                         chatrooms#index
+           chatroom GET    /chatrooms/:id(.:format)                     chatrooms#show
+
+
+
+        user_root GET    /user(.:format)                            user/dashboard#show
+
+    user_chatrooms GET    /user/chatrooms(.:format)                   user/chatrooms#index
+                   POST   /user/chatrooms(.:format)                   user/chatrooms#create
+ new_user_chatroom GET    /user/chatrooms/new(.:format)               user/chatrooms#new
+     user_chatroom DELETE /user/chatrooms/:id(.:format)               user/chatrooms#destroy
+
+
+
+  ???-----------------------------------------------------------------------------------
+  add_event_tmp POST   /tmp/add_event(.:format)                       tmps#add_event
+  remove_event_tmp POST   /tmp/remove_event(.:format)                 tmps#remove_event
+  tmp GET    /tmp(.:format)                                           tmps#show
