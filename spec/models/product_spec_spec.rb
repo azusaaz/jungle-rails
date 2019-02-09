@@ -45,13 +45,13 @@ RSpec.describe Product, type: :model do
       end
     end
 
-    describe "error message" do
-      @product = Product.create(:name => "LHL Cup", :price => nil, :quantity => 20, :category => @category)
-      it 'should be exist' do
-        puts @product.errors.full_messages
-        expect(@product.errors.full_messages).to be_present
-      end
-    end
+    # describe "error message" do
+    #   @product = Product.create(:name => "LHL Cup", :price => nil, :quantity => 20, :category => @category)
+    #   it 'should be exist' do
+    #     puts @product.errors.full_messages
+    #     expect(@product.errors.full_messages).to be_present
+    #   end
+    # end
     
   end
 end
