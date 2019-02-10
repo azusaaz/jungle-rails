@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     describe "User" do
 
       it 'created with a password and password_confirmation fields' do
-        @user = User.create(:first_name => "aaa", :last_name => "bbb", :email => "ccc@ccc.com", :password =>"ddd",:password_confirmation => "")
+        @user = User.create(:first_name => "aaa", :last_name => "bbb", :email => "ccc@ccc.com",:password_confirmation => "ddd")
 
         expect(@user.valid?).to be false
         #puts @user.errors.full_messages
@@ -76,16 +76,17 @@ RSpec.describe User, type: :model do
       #puts @user.errors.full_messages
     end
 
-    # it 'case different address should be match' do
+    it 'case different address should be match' do
 
-    #   @user = User.create(:first_name => "aaa", :last_name => "bbb", :email => "eXample@domain.COM", :password =>"ddd")
+      @user = User.create(:first_name => "aaa", :last_name => "bbb", :email => "eXample@domain2.COM", :password =>"ddd")
       
-    #   puts @user[:email]
-    #   @auth = @user.authenticate_with_credentials("EXAMPLe@DOMAIN.CoM", "ddd" )
-      
-    #   expect(@auth).to be_present
-    #   #puts @user.errors.full_messages
-    # end
+      puts @user[:email]
+      @auth = @user.authenticate_with_credentials("EXAMPLe@DOMAIN2.CoM", "ddd" )
+      byebug
+      expect(@auth).to be_present
+
+      #puts @user.errors.full_messages
+     end
 
   end
 

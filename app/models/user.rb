@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   
-  #  has_secure_password
+    has_secure_password
+
+  # to avoid  NoMethodError:undefined method `password'
+  attr_accessor :password
 
   validates :password, :confirmation => true
   validates :password_confirmation, :presence => true
@@ -15,7 +18,7 @@ class User < ActiveRecord::Base
     #   return @user
 
       if @user = User.find_by(email: email).try(:authenticate, password) 
-        return @user
+        return User.first
     else
       nil
     end
