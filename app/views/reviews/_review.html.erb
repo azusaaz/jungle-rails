@@ -1,6 +1,15 @@
 <tr>
   <td>
-    <h5>rating: <%= review.rating%>  @<%= review.updated_at %></h5>
+    <h5>rating: 
+    <% (1..review.rating).each do |i| %>
+    <span class="glyphicon glyphicon-star text-danger"></span>  
+    <%end %>
+    <% (1..5-review.rating).each do |i| %>
+      <span class="glyphicon glyphicon-star-empty"></span>  
+      <%end %>
+
+    @<%= review.updated_at %>
+    </h5>
     <h5><%= review.user.first_name %> <%= review.user.last_name %>  </h5>
     <h5><%= review.description %></h5>
     
