@@ -54,11 +54,11 @@
               data-email="<%= current_user.email %>"
               data-currency="cad">
             </script>
-        <% end %>
         
-      #   <% else %>
-      #   <% link_to '/login' , method: :index %>
-      #  <% end %>
+        <% else %>
+        <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-default' %>
+        <%= link_to "Login for Checkout", '/login', class: 'btn btn-lg btn-primary' %>
+       <% end %>
       </div>
     </div>
 
