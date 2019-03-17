@@ -4,6 +4,8 @@ A mini e-commerce application built with Rails.
 
 !["Jungle"](https://github.com/azusaaz/jungle-rails/blob/master/docs/jungle.png)
 
+!["Jungle2"](https://github.com/azusaaz/jungle-rails/blob/master/docs/jungle2.png)
+
 ## Setup
 
 1. Fork & Clone
