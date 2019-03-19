@@ -13,7 +13,7 @@ puts "Seeding Data ..."
 # end
 
 def open_asset(file_name)
-  File.open("https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/".join(file_name))
+  File.open("https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/"+ file_name)
 end
 
 # Only run on development (local) instances not on production, etc.
