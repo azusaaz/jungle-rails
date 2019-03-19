@@ -127,7 +127,7 @@ chair = cat3.products.create!({
 bookshelf = cat3.products.create!({
   name:  'Red Bookshelf',
   description: Faker::Hipster.paragraph(4),
-  image: 'https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/furniture3.jpg',
+  image: open_asset('furniture3.jpg'),
   quantity: 0,
   price: 2_483.75
 })
