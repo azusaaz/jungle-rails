@@ -15,7 +15,7 @@ puts "Seeding Data ..."
 require "open-uri"
 def open_asset(file_name)
   File.open(file_name, 'wb') do |fo|
-  fo.write open("https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/#{file_name}").read
+  fo << open("https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/#{file_name}").read
   end
 end
 
