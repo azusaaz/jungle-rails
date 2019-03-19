@@ -5,12 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/furniture3.jpg
+https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/furniture1.jpg
 puts "Seeding Data ..."
 
 # Helper functions
+# def open_asset(file_name)
+#   File.open(Rails.root.join('db', 'seed_assets', file_name))
+# end
+
 def open_asset(file_name)
-  File.open(Rails.root.join('db', 'seed_assets', file_name))
+  File.open("https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/".join(file_name))
 end
 
 # Only run on development (local) instances not on production, etc.
