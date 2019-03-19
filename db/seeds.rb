@@ -14,7 +14,7 @@ puts "Seeding Data ..."
 
 require "open-uri"
 def open_asset(file_name)
-  File.open("https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/#{file_name}")
+  File.write file_name, open("https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/#{file_name}").read
   end
 end
 
