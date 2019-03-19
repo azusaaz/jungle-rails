@@ -5,8 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/furniture3.jpg
-https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/furniture1.jpg
 puts "Seeding Data ..."
 
 # Helper functions
