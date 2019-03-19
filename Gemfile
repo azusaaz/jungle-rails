@@ -36,6 +36,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'stripe'
 gem 'faker'
+gem 'cloudinary'
 
 gem 'rake'
 # Use Capistrano for deployment
