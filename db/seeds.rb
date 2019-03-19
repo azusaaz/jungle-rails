@@ -11,10 +11,14 @@ puts "Seeding Data ..."
 # def open_asset(file_name)
 #   File.open(Rails.root.join('db', 'seed_assets', file_name))
 # end
+require "open-uri"
 
 def open_asset(file_name)
-  File.open("https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/"+ file_name)
+  File.open(file_name, 'wb') do |fo|
+  fo.write open("https://res.cloudinary.com/dx1hfqenq/image/upload/v1552962685/jungle/#{file_name})".read
+  end
 end
+
 
 # Only run on development (local) instances not on production, etc.
 # unless Rails.env.development?
